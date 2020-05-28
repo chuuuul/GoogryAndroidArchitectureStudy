@@ -24,6 +24,7 @@ class MovieAdapter :  RecyclerView.Adapter<MovieViewHolder>() {
         val viewHolder = MovieViewHolder(view)
 
         view.setOnClickListener {
+            movieAdapterPresenter.openWebPage(it.context, viewHolder.layoutPosition)
             openWebPage(it.context, movieList[viewHolder.layoutPosition].link)
         }
 
